@@ -1,10 +1,16 @@
-
 export default {
-  namespace: 'App',
+  namespace: "App",
   state: {
-    loginLoading: true
+    spining: false,
   },
-  reducers: {},
+  reducers: {
+    spining(state) {
+      return {
+        ...state,
+        spining: !state.spining,
+      };
+    },
+  },
   effects: {},
   subscriptions: {},
 };
