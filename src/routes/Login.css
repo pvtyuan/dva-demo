@@ -1,0 +1,18 @@
+
+.normal {
+  width: 320px;
+  padding: 36px;
+  box-shadow: 0 0 100px rgba(0,0,0,.2);
+}
+
+.spins {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 100%;
+}
