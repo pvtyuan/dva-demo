@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './App.css';
-import {Login} from "./Login"
+import Login  from "./Login"
 
-class App {
+class App extends React.Component{
 
   loginProps = {
   loginLoading: false
@@ -12,7 +12,7 @@ class App {
   render = () => {
     return (
       <div className={styles.normal}>
-        <Login {...loginProps} />
+        <Login {...this.loginProps} />
       </div>
     );
   }

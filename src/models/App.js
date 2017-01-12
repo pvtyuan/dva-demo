@@ -2,7 +2,7 @@
 export default {
   namespace: 'App',
   state: {
-    loginLoading: false
+    loginLoading: true
   },
   reducers: {},
   effects: {},
