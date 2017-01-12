@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import styles from './Login.css';
-import {Spin, Form, Input, Checkbox, Button, Row, Switch} from 'antd';
+import {Spin, Form, Input, Checkbox, Button, Row, Col} from 'antd';
 
 const FormItem = Form.Item;
 
@@ -15,9 +15,10 @@ class Login extends React.Component {
       <div className={styles.spins}>
         <Spin tip='Loading...' spinning={this.props.spining} size='large'>
           <div className={styles.normal}>
-            <div className={styles.logo}>
-              <h1>Account Book Login</h1>
-            </div>
+            <Row type="flex" justify="center">
+              <h1 className={styles.h1}>Account Book Login</h1>
+            </Row>
+
             <form>
               <FormItem hasFeedback={true}>
                 {this.props.form.getFieldDecorator('username', {
