@@ -5,6 +5,8 @@ import Login from "./routes/Login.js";
 import Register from "./routes/Register.js";
 import Controller from "./routes/Controller.js";
 
+import DashBorad from "./routes/DashBorad.js";
+
 function RouterConfig({ history }) {
   return (
     <Router history={history }>
@@ -12,6 +14,7 @@ function RouterConfig({ history }) {
       <Route path="/Login" component={ Login }/>
       <Route path="/Register" component={ Register }/>
       <Route path="/Controller" component={ Controller }/>
+      <Route path="/DashBorad" component={DashBorad} />
     </Router>
   );
 }

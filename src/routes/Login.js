@@ -13,7 +13,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className={styles.spins}>
-        <Spin tip='Loading...' spinning={this.props.spining} size='large'>
+        <Spin tip='Loading...' spinning={this.props.loginLoading} size='large'>
           <div className={styles.normal}>
             <Row type="flex" justify="center">
               <h1 className={styles.h1}>Account Book Login</h1>
@@ -63,7 +63,7 @@ class Login extends React.Component {
 
   static propTypes = {
     form: PropTypes.object,
-    spining: PropTypes.bool,
+    loginLoading: PropTypes.bool,
   };
 }
 

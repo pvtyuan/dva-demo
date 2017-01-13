@@ -2,50 +2,30 @@ import React from "react";
 import {connect} from "dva";
 import styles from "./App.css";
 import Login  from "./Login";
-import Controller from "./Controller";
+import DashBoard from "./DashBorad";
 
-class App extends React.Component {
+function App({children, location, dispatch, App}) {
+  const {login, loginLoading} = App;
 
-  constructor(props) {
-    super(props);
-  }
-
-  loginProps = {
-    spining: this.props.spining,
+  const loginProps = {
+    loginLoading: loginLoading,
     onOk: (data) => {
-      this.props.dispatch({type: "App/login", payload: data});
+      dispatch({type: "App/login", payload: data});
     }
   };
 
-  controllerProps = {
-    onSwitch: (data) => {
-      this.props.dispatch({type: "App/spining", payload: data});
-    }
-  };
-
-  getLoginProps = () => {
-    return {
-      spining: this.props.spining,
-      onOk: (data) => {
-        this.props.dispatch({type: "App/login", payload: data});
-      }
-    }
-  };
-
-  render() {
-    return (
-      <div className={styles.normal}>
-        <Login {...this.getLoginProps()} />
-        <Controller {...this.controllerProps} />
-      </div>
-    );
-  }
+  return (
+    <div className={styles.normal}>
+      {login
+      ? <DashBoard />
+      : <Login {...loginProps} />}
+    </div>
+  );
 }
 
-function mapStateToProps(state) {
-  return {
-    spining: state.App.spining
-  };
+function mapStateToProps({...App}) {
+  console.log(...App);
+  return {...App};
 }
 
 export default connect(mapStateToProps)(App);

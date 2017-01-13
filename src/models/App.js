@@ -1,16 +1,35 @@
 export default {
   namespace: "App",
   state: {
-    spining: false,
+    login: false,
+    loginLoading: false,
   },
   reducers: {
-    spining(state) {
+    // login(state,action) {
+    //   return {
+    //     ...state,
+    //     spining: !state.spining,
+    //   };
+    // },
+    showLogin(state) {
       return {
         ...state,
-        spining: !state.spining,
-      };
-    },
+        login: false
+      }
+    }
   },
-  effects: {},
-  subscriptions: {},
+  effects: {
+    *login({payload}, {call, put}) {
+      console.log("login...");
+    }
+  },
+  subscriptions: {
+    setup({ dispatch, history}) {
+      history.listen(({pathname}) => {
+        if (pathname !== "/login") {
+          dispatch({type: "showLogin"})
+        }
+      })
+    }
+  },
 };
