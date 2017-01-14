@@ -1,0 +1,16 @@
+.aside {
+  /*position: relative;*/
+  min-height: 100%;
+}
+
+.sider {
+  width: 224px;
+  background: #404040;
+  position: absolute;
+  overflow: auto;
+  height: 100%;
+}
+
+.main {
+  margin-left: 224px;
+}
