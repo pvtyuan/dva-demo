@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './DashBoard.css';
+import styles from './Home.css';
 import Layout from "../components/layout/Layout"
 
 function DashBorad({children, location, dispatch, AppModel}) {

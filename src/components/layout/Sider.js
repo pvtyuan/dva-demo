@@ -1,23 +1,20 @@
 import React from "react";
 import {Menu} from "antd";
+import Menus from "./Menus"
 
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 
 const Sider = ({}) => {
+  const menusProps = {
+    isNavbar: false,
+  }
+
   return (
     <div className="layout-aside">
       <aside className="layout-sider">
-        <Menu mode="inline"
-              theme="dark">
-          <MenuItem>d</MenuItem>
-          <SubMenu title={<span>1</span>}>
-            <MenuItem>a</MenuItem>
-            <MenuItem>b</MenuItem>
-          </SubMenu>
-        </Menu>
+        <Menus {...menusProps}/>
       </aside>
-      <div className="layout-main"></div>
     </div>
   );
 };

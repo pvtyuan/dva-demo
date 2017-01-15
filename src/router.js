@@ -3,8 +3,7 @@ import {Router, Route, IndexRoute} from "dva/router";
 import App from "./routes/App.js";
 import Login from "./routes/Login.js";
 import Register from "./routes/Register.js";
-
-import DashBoard from "./routes/DashBoard.js";
+import Home from "./routes/Home.js";
 
 function RouterConfig({ history }) {
   return (
@@ -12,7 +11,7 @@ function RouterConfig({ history }) {
       <Route path="/" component={ App }>
         <Route path="login" component={ Login }/>
         <Route path="register" component={ Register }/>
-        <IndexRoute component={DashBoard}/>
+        <IndexRoute component={Home}/>
       </Route>
     </Router>
   );
