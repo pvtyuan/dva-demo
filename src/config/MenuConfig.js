@@ -5,6 +5,11 @@ let MenuConfig = [
     icon: "laptop",
   },
   {
+    key: "account",
+    name: "账本",
+    icon: "book"
+  },
+  {
     key: "users",
     name: "用户管理",
     icon: "user",
@@ -17,7 +22,7 @@ let MenuConfig = [
         name: "nav2"
       }
     ]
-  }
-]
+  },
+];
 
 export default MenuConfig;
