@@ -29,8 +29,9 @@ const getMenus = (menuArray, parentPath) => {
   })
 }
 
-const Menus = ({isNavbar, onClick}) => {
+const Menus = ({location, isNavbar, onClick}) => {
   const menuItems = getMenus(MenuConfig);
+  console.log(location);
   return (
     <Menu
       mode="inline"

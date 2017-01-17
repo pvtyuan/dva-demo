@@ -5,9 +5,10 @@ import Menus from "./Menus"
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 
-const Sider = ({}) => {
+const Sider = ({showNavbar, location}) => {
   const menusProps = {
-    isNavbar: false,
+    showNavbar,
+    location
   }
 
   return (
