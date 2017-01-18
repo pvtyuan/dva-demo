@@ -13,7 +13,8 @@ function DashBorad({children, location, dispatch, AppModel}) {
   return (
     <div className={styles.normal}>
       {/*<Layout className={styles.layout} {...layoutProps} />*/}
-      <Main collapsed={false}/>
+      <Main />
+      {/*<LessTest />*/}
     </div>
   );
 }

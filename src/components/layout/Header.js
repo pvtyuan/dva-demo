@@ -1,6 +1,6 @@
 import React from "react";
 import {Menu, Icon, Popover, Row} from "antd";
-import styles from "./Header.css"
+import styles from "./Header.less"
 import Menus from "./Menus"
 
 const SubMenu = Menu.SubMenu;
@@ -29,8 +29,8 @@ const Header = ({username, showNavbar, location}) => {
           <Icon type="menu-unfold"/>
         </div>
       }
-      <Menu className="header-menu" mode="horizontal" onClick={handleMenuClick}>
-        <SubMenu title={<span><Icon type="user"/>{username}</span>}>
+      <Menu className={styles.menu} mode="horizontal" onClick={handleMenuClick}>
+        <SubMenu title={<span><Icon type="user"/>{username}</span>} className={styles.subMenu}>
           <MenuItem key="logout">
             logout
           </MenuItem>

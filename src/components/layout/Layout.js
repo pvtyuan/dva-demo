@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Layout.css";
+import styles from "./Layout.less";
 import Sider from "./Sider";
 import Header from "./Header";
 import {Link} from "dva/router";
