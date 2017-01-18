@@ -1,179 +1,63 @@
 import React from "react";
+import {Layout} from "antd";
 import styles from "./Layout.less";
-import Sider from "./Sider";
-import Header from "./Header";
+import SiderContainer from "./SiderContainer";
+import HeaderContainer from "./HeaderContainer";
+import ContentContainer from "./ContentContainer";
+import FooterContainer from "./FooterContainer";
+import Menus from "./Menus"
 import {Link} from "dva/router";
 
+const {Content, Header, Footer, Sider}  = Layout;
 
-const Layout = ({username, location}) => {
-  const siderProps = {
+export default ({username, location}) => {
+
+  const siderContainerProps = {
+    location,
+    showNavbar: true,
+    showNavbarText: true
+  };
+
+  const menusProps = {
+    location,
+    showNavbar: true,
+    showNavbarText: true
+  };
+
+  const contentContainerProps = {
+    username,
     location,
     showNavbar: true
   };
 
-  const HeaderProps = {
+  const headerContainerProps = {
+    username,
+    location,
+    showNavbar: true
+  };
+
+  const footerContainerProps = {
     username,
     location,
     showNavbar: true
   };
 
   return (
-    <div className={styles.aside}>
-      <div className={styles.sider}>
-        <div className={styles.logo}>
-          <h1><Link to="/">Home Service</Link></h1>
-        </div>
-        <Sider {...siderProps}/>
-      </div>
-      <div className={styles.main}>
-        <Header {...HeaderProps}/>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-        <p>dsagsd</p>
-      </div>
-    </div>
-  );
-};
-
-export default Layout;
+    <Layout className={styles.layout}>
+      <Sider className={styles.sider}>
+        <SiderContainer {...siderContainerProps} />
+      </Sider>
+      <Layout className={styles.main}>
+        <Header className={styles.header}>
+          <HeaderContainer {...headerContainerProps} />
+        </Header>
+        <Content>
+          <ContentContainer {...contentContainerProps} />
+        </Content>
+        <Footer>
+          <FooterContainer {...footerContainerProps} />
+        </Footer>
+      </Layout>
+    </Layout>
+  )
+}

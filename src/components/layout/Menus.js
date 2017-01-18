@@ -8,6 +8,7 @@ const MenuItem = Menu.Item;
 
 const topMenus = MenuConfig.map(item => item.key);
 const getMenus = (menuArray, parentPath) => {
+  console.log(`get menu for ${parentPath}`);
   parentPath = parentPath || "/";
   return menuArray.map(item => {
     if (item.child) {
@@ -47,6 +48,6 @@ const Menus = ({location, isNavbar, onClick}) => {
 Menus.propTypes = {
   isNavbar: PropTypes.bool,
   onClick: PropTypes.func
-}
+};
 
 export default Menus;

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'dva';
 import styles from './Home.css';
 import Layout from "../components/layout/Layout"
+import Mains from "../components/layout/Mains";
 
 function DashBorad({children, location, dispatch, AppModel}) {
   const layoutProps = {
@@ -9,8 +10,14 @@ function DashBorad({children, location, dispatch, AppModel}) {
     location,
   };
 
+  console.log(location)
+
   return (
-    <Layout className={styles.layout} {...layoutProps} />
+    <div className={styles.normal}>
+      {/*<Layout className={styles.layout} {...layoutProps} />*/}
+      <Mains />
+      {/*<LessTest />*/}
+    </div>
   );
 }
 
