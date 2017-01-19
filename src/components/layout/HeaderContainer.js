@@ -31,8 +31,8 @@ export default ({username, showSider, location,
       }
 
       <Menu className={styles.menu} mode="horizontal">
-        <SubMenu title={<span className={styles.subMenu}><Icon type="user"/>{username}</span>}
-        className={styles.subMenuTitle}>
+        <SubMenu title={<span className={styles.subMenuTitle}><Icon type="user"/>{username}</span>}
+                 className={styles.subMenu}>
           <MenuItem key="aa" className={styles.menuItem}>
             <a><Icon type="setting"/>settings</a>
           </MenuItem>

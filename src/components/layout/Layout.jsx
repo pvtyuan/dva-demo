@@ -61,14 +61,12 @@ export default ({username, location, showSider,
         <Header className={styles.header}>
           <HeaderContainer {...headerContainerProps} />
         </Header>
-        <Layout className={styles.content}>
-        <Content>
+        <Content className={styles.content}>
           <ContentContainer {...contentContainerProps} />
         </Content>
         <Footer className={styles.footer}>
           <FooterContainer {...footerContainerProps} />
         </Footer>
-        </Layout>
       </Layout>
     </Layout>
   )
