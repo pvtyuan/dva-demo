@@ -6,8 +6,6 @@ const Content = Layout.Content;
 
 export default () => {
   return (
-    <Content>
-      <div className={styles.content}></div>
-    </Content>
+    <div className={styles.content}></div>
   )
 }

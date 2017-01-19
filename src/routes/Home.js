@@ -1,12 +1,22 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './Home.css';
-import Layout from "../components/layout/Layout"
+import Layout from "../components/layout/Layout.jsx"
 
 function DashBorad({children, location, dispatch, AppModel}) {
+  const switchSider = () => {
+    dispatch({type: "AppModel/switchSider"});
+  };
+
+  const foldSider = () => {
+    dispatch({type: "AppModel/foldSider"});
+  }
+
   const layoutProps = {
-    username: AppModel.username,
+    ...AppModel,
     location,
+    foldSider,
+    switchSider
   };
 
   return (

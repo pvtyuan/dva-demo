@@ -10,30 +10,37 @@ import {Link} from "dva/router";
 
 const {Content, Header, Footer, Sider}  = Layout;
 
-export default ({username, location}) => {
+export default ({username, location, showSider,
+  showSiderText, siderFolded, switchSider,
+  foldSider}) => {
+
+  console.log(`siderFolded: ${siderFolded}`);
 
   const siderContainerProps = {
     location,
-    showNavbar: true,
-    showNavbarText: true
+    showSider,
+    siderFolded,
+    foldSider,
   };
 
   const menusProps = {
     location,
-    showNavbar: true,
-    showNavbarText: true
+    showSider,
+    siderFolded
   };
 
   const contentContainerProps = {
     username,
     location,
-    showNavbar: true
   };
 
   const headerContainerProps = {
     username,
     location,
-    showNavbar: true
+    showSider,
+    siderFolded,
+    switchSider,
+    foldSider,
   };
 
   const footerContainerProps = {
@@ -44,19 +51,24 @@ export default ({username, location}) => {
 
   return (
     <Layout className={styles.layout}>
-      <Sider className={styles.sider}>
+      <Sider className={styles.sider}
+             collapsible
+             collapsed={siderFolded} trigger={null} collapsedWidth={48}
+      >
         <SiderContainer {...siderContainerProps} />
       </Sider>
       <Layout className={styles.main}>
         <Header className={styles.header}>
           <HeaderContainer {...headerContainerProps} />
         </Header>
+        <Layout className={styles.content}>
         <Content>
           <ContentContainer {...contentContainerProps} />
         </Content>
-        <Footer>
+        <Footer className={styles.footer}>
           <FooterContainer {...footerContainerProps} />
         </Footer>
+        </Layout>
       </Layout>
     </Layout>
   )

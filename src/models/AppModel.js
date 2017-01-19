@@ -7,6 +7,8 @@ export default {
     rememberMe: false,
     loginSuccessPath: "",
     username: "",
+    showSider: true,
+    siderFolded: false,
   },
   reducers: {
     login(state, action) {
@@ -26,6 +28,18 @@ export default {
       return {
         ...state,
         loginSuccessPath: action.payload
+      }
+    },
+    switchSider(state, action) {
+      return {
+        ...state,
+        showSider: !state.showSider
+      }
+    },
+    foldSider(state) {
+      return {
+        ...state,
+        siderFolded: !state.siderFolded
       }
     }
   },

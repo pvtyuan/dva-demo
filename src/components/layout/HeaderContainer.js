@@ -7,45 +7,41 @@ const Header = Layout.Header;
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 
-export default ({username, showNavbar, location}) => {
-  const handleMenuClick = () => {
-
-  };
+export default ({username, showSider, location,
+  siderFolded, switchSider, foldSider}) => {
 
   const menusProps = {
-    showNavbar,
-    location
+    openAllKeys: showSider,
+    location,
+    showText: siderFolded
   };
 
-  const menu = (
-    <Menu>
-      <MenuItem>1</MenuItem>
-      <MenuItem>2</MenuItem>
-      <MenuItem>3</MenuItem>
-    </Menu>
-  );
-
   return (
-    <Row type="flex" className={styles.row}>
-      {showNavbar
+    <div className={styles.container}>
+      {!showSider
         ? <Popover placement="bottomLeft" content={<Menus {...menusProps}/>}>
           <div className={styles.siderButton}>
             <Icon type="bars" />
           </div>
 
         </Popover>
-        :<div className={styles.siderButton}>
-          <Icon type="menu-unfold"/>
+        :<div className={styles.siderButton} onClick={foldSider}>
+          <Icon type={siderFolded? "menu-unfold" : "menu-fold"}/>
         </div>
       }
 
       <Menu className={styles.menu} mode="horizontal">
-        <SubMenu title={<span><Icon type="user"/>username</span>} className={styles.SubMenu}>
-          <MenuItem key="logout" className={styles.MenuItem}>
+        <SubMenu title={<span className={styles.subMenu}><Icon type="user"/>{username}</span>}
+        className={styles.subMenuTitle}>
+          <MenuItem key="aa" className={styles.menuItem}>
+            <a><Icon type="setting"/>settings</a>
+          </MenuItem>
+          <MenuItem key="logout" className={styles.menuItem}>
             <a><Icon type="logout"/>Logout</a>
           </MenuItem>
+
         </SubMenu>
       </Menu>
-    </Row>
+    </div>
   );
 };

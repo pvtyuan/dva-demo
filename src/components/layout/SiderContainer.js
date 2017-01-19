@@ -3,16 +3,14 @@ import {Menu, Layout} from "antd";
 import Menus from "./Menus";
 import styles from "./SiderContainer.css";
 
-const SubMenu = Menu.SubMenu;
-const MenuItem = Menu.Item;
-
-const Sider = Layout.Sider;
-
-export default ({showNavbar, showNavbarText, location}) => {
+export default ({showSider, showSiderText, location,
+  siderFolded}) => {
   const menusProps = {
-    showNavbar,
-    showNavbarText,
-    location
+    showSider,
+    showSiderText,
+    location,
+    inlineMode: !siderFolded,
+    openAllKeys: showSider,
   };
 
   return (
