@@ -1,20 +1,24 @@
-import React from "react";
+import React from 'react';
+import {connect} from 'dva';
+import styles from './Layout.less';
 import {Layout} from "antd";
-import styles from "./Layout.less";
-import SiderContainer from "./SiderContainer";
-import HeaderContainer from "./HeaderContainer";
-import ContentContainer from "./ContentContainer";
-import FooterContainer from "./FooterContainer";
-import Menus from "./Menus"
-import {Link} from "dva/router";
+import SiderContainer from "../components/layout/SiderContainer";
+import HeaderContainer from "../components/layout/HeaderContainer";
+import ContentContainer from "../components/layout/ContentContainer";
+import FooterContainer from "../components/layout/FooterContainer";
 
-const {Content, Header, Footer, Sider}  = Layout;
+const {Content, Header, Footer, Sider} = Layout;
 
-export default ({username, location, showSider,
-  showSiderText, siderFolded, switchSider,
-  foldSider}) => {
+function DashBorad({children, location, dispatch, AppModel}) {
+  const {username, showSider, siderFolded} = AppModel;
 
-  console.log(`siderFolded: ${siderFolded}`);
+  const switchSider = () => {
+    dispatch({type: "AppModel/switchSider"});
+  };
+
+  const foldSider = () => {
+    dispatch({type: "AppModel/foldSider"});
+  };
 
   const siderContainerProps = {
     location,
@@ -23,16 +27,13 @@ export default ({username, location, showSider,
     foldSider,
   };
 
-  const menusProps = {
-    location,
-    showSider,
-    siderFolded
-  };
-
   const contentContainerProps = {
     username,
     location,
+    inputValue: "ssss",
+    content: children,
   };
+
 
   const headerContainerProps = {
     username,
@@ -44,9 +45,7 @@ export default ({username, location, showSider,
   };
 
   const footerContainerProps = {
-    username,
-    location,
-    showNavbar: true
+
   };
 
   return (
@@ -69,5 +68,11 @@ export default ({username, location, showSider,
         </Footer>
       </Layout>
     </Layout>
-  )
+  );
 }
+
+function mapStateToProps({AppModel}) {
+  return {AppModel};
+}
+
+export default connect(mapStateToProps)(DashBorad);

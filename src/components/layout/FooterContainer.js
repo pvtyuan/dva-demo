@@ -6,6 +6,6 @@ const Footer = Layout.Footer;
 
 export default () => {
   return (
-    <div className={styles.footer}></div>
+    <p>2016 pvtyuan</p>
   )
 }

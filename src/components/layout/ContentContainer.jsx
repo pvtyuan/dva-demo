@@ -1,10 +1,9 @@
 import React from "react";
-import {Layout, Table, Card} from "antd";
+import {Layout, Table, Card, Input} from "antd";
 import styles from "./ContentContainer.less"
 
-const Content = Layout.Content;
 
-export default () => {
+export default ({inputValue, content}) => {
 
   const dataSource = [{
     key: '1',
@@ -42,6 +41,8 @@ export default () => {
         <p>Card content</p>
       </Card>
       <Table dataSource={dataSource} columns={columns}/>
+      <Input value={inputValue}/>
+      {content}
     </div>
   )
 }
