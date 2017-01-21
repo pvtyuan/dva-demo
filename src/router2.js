@@ -4,7 +4,7 @@ import App from "./routes/App.js";
 import Login from "./routes/Login.js";
 import Register from "./routes/Register.js";
 import Layout from "./routes/Layout.js";
-import TestApp from "./components/TestApp/TestApp";
+import TestApp from "./components/TestApp/TestApp.tsx";
 import Dashboard from "./components/Dashboard/Dashboard";
 
 function RouterConfig({ history }) {

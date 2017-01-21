@@ -3,22 +3,23 @@
   "scripts": {
     "start": "roadhog server",
     "build": "roadhog build",
-    "lint": "eslint --ext .js src test"
+    "lint": "eslint --ext .js src test",
+    "dev-server": "webpack-dev-server"
   },
   "engines": {
     "install-node": "6.9.2"
   },
   "dependencies": {
-    "@types/react": "^15.0.0",
-    "@types/react-dom": "^0.14.20",
     "antd": "^2.6.3",
     "babel-runtime": "^6.22.0",
     "dva": "^1.2.1",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "redux-persist": "^4.0.1"
+    "redux-persist": "^4.1.0"
   },
   "devDependencies": {
+    "@types/react": "^15.0.0",
+    "@types/react-dom": "^0.14.20",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "babel-eslint": "^7.1.1",
     "babel-plugin-dva-hmr": "^0.3.2",
